@@ -1,452 +1,895 @@
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<html class="light" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>Academic School Dashboard</title>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&amp;family=Inter:wght@400;500;600&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script id="tailwind-config">
-        tailwind.config = {
-          darkMode: "class",
-          theme: {
-            extend: {
-              "colors": {
-                      "on-primary-fixed": "#111c2d",
-                      "outline": "#75777d",
-                      "surface": "#faf8ff",
-                      "surface-bright": "#faf8ff",
-                      "primary-container": "#1e293b",
-                      "on-secondary": "#ffffff",
-                      "on-surface": "#131b2e",
-                      "outline-variant": "#c5c6cd",
-                      "on-background": "#131b2e",
-                      "background": "#faf8ff",
-                      "inverse-primary": "#bcc7de",
-                      "on-tertiary": "#ffffff",
-                      "surface-container": "#eaedff",
-                      "tertiary-fixed": "#e0e3e5",
-                      "secondary-container": "#d0e1fb",
-                      "on-secondary-fixed": "#0b1c30",
-                      "surface-container-high": "#e2e7ff",
-                      "on-tertiary-container": "#8d9092",
-                      "secondary-fixed": "#d3e4fe",
-                      "tertiary-fixed-dim": "#c4c7c9",
-                      "primary": "#091426",
-                      "secondary": "#505f76",
-                      "on-secondary-container": "#54647a",
-                      "on-secondary-fixed-variant": "#38485d",
-                      "surface-dim": "#d2d9f4",
-                      "on-primary-container": "#8590a6",
-                      "tertiary-container": "#26292b",
-                      "primary-fixed": "#d8e3fb",
-                      "on-error": "#ffffff",
-                      "tertiary": "#111516",
-                      "inverse-on-surface": "#eef0ff",
-                      "surface-container-low": "#f2f3ff",
-                      "on-surface-variant": "#45474c",
-                      "on-primary": "#ffffff",
-                      "on-error-container": "#93000a",
-                      "secondary-fixed-dim": "#b7c8e1",
-                      "error-container": "#ffdad6",
-                      "surface-container-highest": "#dae2fd",
-                      "on-primary-fixed-variant": "#3c475a",
-                      "error": "#ba1a1a",
-                      "on-tertiary-fixed-variant": "#444749",
-                      "on-tertiary-fixed": "#191c1e",
-                      "primary-fixed-dim": "#bcc7de",
-                      "surface-container-lowest": "#ffffff",
-                      "inverse-surface": "#283044",
-                      "surface-tint": "#545f73",
-                      "surface-variant": "#dae2fd"
-              },
-              "borderRadius": {
-                      "DEFAULT": "0.25rem",
-                      "lg": "0.5rem",
-                      "xl": "0.75rem",
-                      "full": "9999px"
-              },
-              "spacing": {
-                      "base": "4px",
-                      "md": "1.5rem",
-                      "margin": "2rem",
-                      "lg": "2rem",
-                      "sm": "1rem",
-                      "gutter": "1.5rem",
-                      "xs": "0.5rem",
-                      "xl": "3rem"
-              },
-              "fontFamily": {
-                      "headline-lg": [
-                              "Geist"
-                      ],
-                      "display": [
-                              "Geist"
-                      ],
-                      "body-lg": [
-                              "Inter"
-                      ],
-                      "headline-md": [
-                              "Geist"
-                      ],
-                      "headline-lg-mobile": [
-                              "Geist"
-                      ],
-                      "label-md": [
-                              "Geist"
-                      ],
-                      "body-md": [
-                              "Inter"
-                      ]
-              },
-              "fontSize": {
-                      "headline-lg": [
-                              "28px",
-                              {
-                                      "lineHeight": "1.3",
-                                      "letterSpacing": "-0.01em",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "display": [
-                              "36px",
-                              {
-                                      "lineHeight": "1.2",
-                                      "letterSpacing": "-0.02em",
-                                      "fontWeight": "700"
-                              }
-                      ],
-                      "body-lg": [
-                              "16px",
-                              {
-                                      "lineHeight": "1.6",
-                                      "fontWeight": "400"
-                              }
-                      ],
-                      "headline-md": [
-                              "20px",
-                              {
-                                      "lineHeight": "1.4",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "headline-lg-mobile": [
-                              "22px",
-                              {
-                                      "lineHeight": "1.3",
-                                      "fontWeight": "600"
-                              }
-                      ],
-                      "label-md": [
-                              "12px",
-                              {
-                                      "lineHeight": "1.0",
-                                      "letterSpacing": "0.02em",
-                                      "fontWeight": "500"
-                              }
-                      ],
-                      "body-md": [
-                              "14px",
-                              {
-                                      "lineHeight": "1.5",
-                                      "fontWeight": "400"
-                              }
-                      ]
-              }
-      },
-          },
+    <title>Abhinav Public School — Student Portal</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,400,0,0" rel="stylesheet">
+
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
         }
-    </script>
+
+        body {
+            min-height: 100vh;
+            background: #faf8ff;
+            color: #131b2e;
+            font-family: Inter, sans-serif;
+        }
+
+        /* LOGIN */
+
+        .login-page {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            background:
+                radial-gradient(circle at 10% 10%, #e8edff 0, transparent 35%),
+                radial-gradient(circle at 90% 90%, #e0e8ff 0, transparent 35%),
+                #faf8ff;
+        }
+
+        .login-card {
+            width: 100%;
+            max-width: 430px;
+            background: white;
+            border: 1px solid #dfe2eb;
+            border-radius: 24px;
+            padding: 38px;
+            box-shadow: 0 20px 60px rgba(9, 20, 38, .08);
+        }
+
+        .school-logo {
+            width: 58px;
+            height: 58px;
+            border-radius: 15px;
+            background: #091426;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 22px;
+        }
+
+        .school-logo span {
+            font-size: 30px;
+        }
+
+        .login-card h1 {
+            font-family: Geist, sans-serif;
+            font-size: 28px;
+            margin-bottom: 7px;
+        }
+
+        .subtitle {
+            color: #687083;
+            font-size: 14px;
+            margin-bottom: 30px;
+        }
+
+        .field {
+            margin-bottom: 18px;
+        }
+
+        .field label {
+            display: block;
+            font-size: 13px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+
+        .input-box {
+            position: relative;
+        }
+
+        .input-box span {
+            position: absolute;
+            left: 14px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #737b8c;
+        }
+
+        input {
+            width: 100%;
+            height: 48px;
+            border: 1px solid #d2d5df;
+            border-radius: 10px;
+            padding: 0 14px 0 44px;
+            font-size: 14px;
+            outline: none;
+            background: #fafbff;
+        }
+
+        input:focus {
+            border-color: #091426;
+            box-shadow: 0 0 0 3px rgba(9, 20, 38, .08);
+        }
+
+        .login-btn {
+            width: 100%;
+            height: 50px;
+            border: 0;
+            border-radius: 10px;
+            background: #091426;
+            color: white;
+            font-size: 14px;
+            font-weight: 600;
+            cursor: pointer;
+            margin-top: 8px;
+            transition: .2s;
+        }
+
+        .login-btn:hover {
+            transform: translateY(-1px);
+            background: #16243b;
+        }
+
+        .error {
+            display: none;
+            margin-top: 14px;
+            padding: 11px;
+            border-radius: 9px;
+            background: #ffe5e5;
+            color: #a51d1d;
+            font-size: 13px;
+            text-align: center;
+        }
+
+        .demo {
+            margin-top: 24px;
+            padding: 13px;
+            border-radius: 10px;
+            background: #f0f3ff;
+            color: #59647a;
+            font-size: 12px;
+            text-align: center;
+        }
+
+        .footer {
+            text-align: center;
+            color: #8b91a0;
+            font-size: 11px;
+            margin-top: 25px;
+        }
+
+        /* DASHBOARD */
+
+        .dashboard {
+            display: none;
+            min-height: 100vh;
+        }
+
+        .sidebar {
+            position: fixed;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 270px;
+            background: white;
+            border-right: 1px solid #dfe2eb;
+            padding: 20px 12px;
+            z-index: 10;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 8px 14px 28px;
+        }
+
+        .brand-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 11px;
+            background: #091426;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .brand h2 {
+            font-family: Geist;
+            font-size: 16px;
+        }
+
+        .brand p {
+            color: #747b8a;
+            font-size: 10px;
+            margin-top: 2px;
+        }
+
+        .nav {
+            display: flex;
+            flex-direction: column;
+            gap: 3px;
+        }
+
+        .nav-item {
+            border: 0;
+            background: transparent;
+            color: #566177;
+            padding: 12px 14px;
+            border-radius: 9px;
+            display: flex;
+            align-items: center;
+            gap: 13px;
+            font-size: 13px;
+            cursor: pointer;
+            text-align: left;
+            width: 100%;
+        }
+
+        .nav-item:hover,
+        .nav-item.active {
+            background: #091426;
+            color: white;
+        }
+
+        .nav-item span {
+            font-size: 20px;
+        }
+
+        .main {
+            margin-left: 270px;
+        }
+
+        .topbar {
+            height: 70px;
+            background: white;
+            border-bottom: 1px solid #dfe2eb;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 30px;
+        }
+
+        .search {
+            width: 330px;
+            height: 40px;
+            background: #f2f3ff;
+            border: 1px solid #dfe2eb;
+            border-radius: 9px;
+            padding: 0 15px;
+        }
+
+        .profile {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .avatar {
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            background: #d9e2ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #091426;
+        }
+
+        .content {
+            padding: 32px;
+            max-width: 1450px;
+        }
+
+        .welcome h1 {
+            font-family: Geist;
+            font-size: 31px;
+            letter-spacing: -.8px;
+        }
+
+        .welcome p {
+            color: #687083;
+            margin-top: 6px;
+            font-size: 14px;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            margin-top: 28px;
+        }
+
+        .card {
+            background: white;
+            border: 1px solid #dfe2eb;
+            border-radius: 18px;
+            padding: 21px;
+            box-shadow: 0 2px 5px rgba(0,0,0,.03);
+        }
+
+        .stat-icon {
+            width: 42px;
+            height: 42px;
+            border-radius: 50%;
+            background: #e4eaff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 18px;
+        }
+
+        .stat-label {
+            color: #687083;
+            font-size: 12px;
+            margin-bottom: 6px;
+        }
+
+        .stat-value {
+            font-family: Geist;
+            font-size: 24px;
+            font-weight: 600;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 1.4fr 1fr;
+            gap: 18px;
+            margin-top: 18px;
+        }
+
+        .card-title {
+            font-family: Geist;
+            font-size: 17px;
+            font-weight: 600;
+            margin-bottom: 20px;
+        }
+
+        .notice {
+            padding: 15px 0;
+            border-top: 1px solid #e6e7ed;
+        }
+
+        .notice:first-child {
+            border-top: 0;
+        }
+
+        .notice h3 {
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+
+        .notice p {
+            font-size: 12px;
+            color: #72798a;
+            line-height: 1.5;
+        }
+
+        .event {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            background: #f3f5ff;
+            padding: 14px;
+            border-radius: 12px;
+            margin-bottom: 10px;
+        }
+
+        .event-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            background: #dce5ff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .event h3 {
+            font-size: 13px;
+        }
+
+        .event p {
+            color: #72798a;
+            font-size: 11px;
+            margin-top: 4px;
+        }
+
+        @media(max-width: 900px) {
+            .sidebar {
+                width: 220px;
+            }
+
+            .main {
+                margin-left: 220px;
+            }
+
+            .stats {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media(max-width: 650px) {
+            .sidebar {
+                display: none;
+            }
+
+            .main {
+                margin-left: 0;
+            }
+
+            .topbar {
+                padding: 0 15px;
+            }
+
+            .search {
+                display: none;
+            }
+
+            .content {
+                padding: 20px 15px;
+            }
+
+            .stats {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
-<body class="bg-background text-on-background font-body-md text-body-md antialiased overflow-x-hidden flex h-screen">
-<!-- SideNavBar -->
-<nav class="hidden md:flex flex-col h-screen pt-4 pb-8 overflow-y-auto bg-surface-container-lowest dark:bg-primary-container text-primary dark:text-primary-fixed fixed left-0 top-0 h-full w-[280px] border-r border-outline-variant dark:border-outline shadow-md dark:shadow-none z-40">
-<div class="px-6 mb-8 flex items-center gap-3">
-<div class="w-10 h-10 rounded-lg bg-primary flex items-center justify-center text-on-primary">
-<span class="material-symbols-outlined">school</span>
-</div>
-<div>
-<h1 class="text-headline-md font-headline-md font-black text-primary dark:text-primary-fixed">Academic School</h1>
-<p class="text-label-md font-label-md text-secondary">Admin Portal</p>
-</div>
-</div>
-<ul class="flex flex-col gap-1 px-2">
-<li>
-<a class="bg-primary dark:bg-primary-fixed text-on-primary dark:text-on-primary-fixed rounded-lg mx-2 my-1 px-4 py-3 flex items-center gap-3 text-label-md font-label-md scale-95 active:scale-100 transition-transform hover:bg-surface-container-highest dark:hover:bg-secondary-container transition-all" href="#">
-<span class="material-symbols-outlined" data-weight="fill" style="font-variation-settings: 'FILL' 1;">dashboard</span>
-                    Dashboard
-                </a>
-</li>
-<li>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container rounded-lg mx-2 my-1 px-4 py-3 flex items-center gap-3 text-label-md font-label-md scale-95 active:scale-100 transition-transform hover:bg-surface-container-highest dark:hover:bg-secondary-container transition-all" href="#">
-<span class="material-symbols-outlined">person_search</span>
-                    Student Register
-                </a>
-</li>
-<li>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container rounded-lg mx-2 my-1 px-4 py-3 flex items-center gap-3 text-label-md font-label-md scale-95 active:scale-100 transition-transform hover:bg-surface-container-highest dark:hover:bg-secondary-container transition-all" href="#">
-<span class="material-symbols-outlined">calendar_today</span>
-                    Attendance
-                </a>
-</li>
-<li>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container rounded-lg mx-2 my-1 px-4 py-3 flex items-center gap-3 text-label-md font-label-md scale-95 active:scale-100 transition-transform hover:bg-surface-container-highest dark:hover:bg-secondary-container transition-all" href="#">
-<span class="material-symbols-outlined">menu_book</span>
-                    Homework
-                </a>
-</li>
-<li>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container rounded-lg mx-2 my-1 px-4 py-3 flex items-center gap-3 text-label-md font-label-md scale-95 active:scale-100 transition-transform hover:bg-surface-container-highest dark:hover:bg-secondary-container transition-all" href="#">
-<span class="material-symbols-outlined">payments</span>
-                    School Fee
-                </a>
-</li>
-<li>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container rounded-lg mx-2 my-1 px-4 py-3 flex items-center gap-3 text-label-md font-label-md scale-95 active:scale-100 transition-transform hover:bg-surface-container-highest dark:hover:bg-secondary-container transition-all" href="#">
-<span class="material-symbols-outlined">live_tv</span>
-                    Live Classes
-                </a>
-</li>
-<li>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container rounded-lg mx-2 my-1 px-4 py-3 flex items-center gap-3 text-label-md font-label-md scale-95 active:scale-100 transition-transform hover:bg-surface-container-highest dark:hover:bg-secondary-container transition-all" href="#">
-<span class="material-symbols-outlined">announcement</span>
-                    Notice Board
-                </a>
-</li>
-<li>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container rounded-lg mx-2 my-1 px-4 py-3 flex items-center gap-3 text-label-md font-label-md scale-95 active:scale-100 transition-transform hover:bg-surface-container-highest dark:hover:bg-secondary-container transition-all" href="#">
-<span class="material-symbols-outlined">textsms</span>
-                    SMS
-                </a>
-</li>
-<div class="flex-grow"></div>
-<li>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container rounded-lg mx-2 my-1 px-4 py-3 flex items-center gap-3 text-label-md font-label-md scale-95 active:scale-100 transition-transform hover:bg-surface-container-highest dark:hover:bg-secondary-container transition-all" href="#">
-<span class="material-symbols-outlined">account_circle</span>
-                    Profile
-                </a>
-</li>
-<li>
-<a class="text-secondary dark:text-secondary-fixed-dim hover:bg-surface-container-high dark:hover:bg-secondary-container rounded-lg mx-2 my-1 px-4 py-3 flex items-center gap-3 text-label-md font-label-md scale-95 active:scale-100 transition-transform hover:bg-surface-container-highest dark:hover:bg-secondary-container transition-all" href="#">
-<span class="material-symbols-outlined">settings</span>
-                    Settings
-                </a>
-</li>
-</ul>
-</nav>
-<!-- Main Content Wrapper -->
-<div class="flex-1 md:ml-[280px] flex flex-col h-screen overflow-hidden">
-<!-- TopNavBar -->
-<header class="bg-surface dark:bg-primary text-primary dark:text-on-primary docked full-width top-0 border-b border-outline-variant dark:border-primary-container shadow-sm flex justify-between items-center w-full px-md h-16 fixed top-0 z-50 md:left-[280px] md:w-[calc(100%-280px)]">
-<div class="flex items-center md:hidden">
-<span class="material-symbols-outlined cursor-pointer hover:bg-surface-container dark:hover:bg-primary-container transition-colors p-2 rounded-full">menu</span>
-<span class="text-headline-md font-headline-md font-bold text-primary dark:text-inverse-primary ml-2">Academic School</span>
-</div>
-<div class="hidden md:flex items-center w-96 relative">
-<span class="material-symbols-outlined absolute left-3 text-outline">search</span>
-<input class="w-full pl-10 pr-4 py-2 bg-surface-container-low border border-outline-variant rounded-lg text-body-md font-body-md focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-all" placeholder="Search students, classes, or notices..." type="text"/>
-</div>
-<div class="flex items-center gap-2">
-<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors active:opacity-80 transition-all">
-<span class="material-symbols-outlined">campaign</span>
-</button>
-<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors active:opacity-80 transition-all relative">
-<span class="material-symbols-outlined">sms</span>
-<span class="absolute top-2 right-2 w-2 h-2 bg-error rounded-full"></span>
-</button>
-<button class="w-10 h-10 rounded-full flex items-center justify-center text-on-surface-variant hover:bg-surface-container transition-colors active:opacity-80 transition-all">
-<span class="material-symbols-outlined">notifications</span>
-</button>
-<div class="h-6 w-px bg-outline-variant mx-2"></div>
-<button class="flex items-center gap-2 hover:bg-surface-container p-1 pr-3 rounded-full transition-colors">
-<img class="w-8 h-8 rounded-full object-cover border border-outline-variant" data-alt="A professional headshot of a young male student in a neat school uniform against a neutral bright background, highly detailed, well-lit, corporate minimalist style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCRBPTB09u7Bm87iOjHiHaYa5kHc-yVko6zB9bgXIGA1V1pUx3kwfPJxu7LHx5ssi5hJzJylWa_JRbMV4cS75EY5JcXSwOAQ9ZHGUJVv1eXK89e3hHb_CiYbvbVlXpd3VftcUlqzsqIJYig9jE_6ndAQHulCZvwblESYhQn7eWNmTuNfmvi3iL9yB0hYOfvj5_K5r-7i9n1dZZIeaC-PXmgKphjROvpChWr-WrAO5gUc0zEZmm0yAzD"/>
-<span class="text-label-md font-label-md text-on-surface hidden sm:block">Student Profile</span>
-</button>
-</div>
-</header>
-<!-- Main Canvas -->
-<main class="flex-1 overflow-y-auto p-4 md:p-6 lg:p-8 mt-16 pb-24 md:pb-8 max-w-[1440px] mx-auto w-full">
-<div class="flex justify-between items-end mb-6">
-<div>
-<h2 class="text-display font-display text-primary">Good Morning, Admin</h2>
-<p class="text-body-lg font-body-lg text-secondary mt-1">Here is the overview for today, October 24th.</p>
-</div>
-</div>
-<!-- Stats Grid -->
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6 mb-8">
-<!-- Stat Card 1 -->
-<div class="bg-surface-container-lowest rounded-[1.5rem] p-6 border border-outline-variant shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] flex flex-col justify-between hover:shadow-md transition-shadow">
-<div class="flex justify-between items-start mb-4">
-<div class="w-12 h-12 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined">calendar_today</span>
-</div>
-<span class="bg-surface-container text-primary px-3 py-1 rounded-full text-label-md font-label-md">+2% today</span>
-</div>
-<div>
-<p class="text-label-md font-label-md text-secondary mb-1">Attendance Percentage</p>
-<h3 class="text-headline-lg font-headline-lg text-primary">94.2%</h3>
-</div>
-</div>
-<!-- Stat Card 2 -->
-<div class="bg-surface-container-lowest rounded-[1.5rem] p-6 border border-outline-variant shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] flex flex-col justify-between hover:shadow-md transition-shadow">
-<div class="flex justify-between items-start mb-4">
-<div class="w-12 h-12 rounded-full bg-error-container flex items-center justify-center text-error">
-<span class="material-symbols-outlined">menu_book</span>
-</div>
-<span class="bg-surface-container text-primary px-3 py-1 rounded-full text-label-md font-label-md">Due Tomorrow</span>
-</div>
-<div>
-<p class="text-label-md font-label-md text-secondary mb-1">Pending Homework</p>
-<h3 class="text-headline-lg font-headline-lg text-primary">5 Tasks</h3>
-</div>
-</div>
-<!-- Stat Card 3 -->
-<div class="bg-surface-container-lowest rounded-[1.5rem] p-6 border border-outline-variant shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] flex flex-col justify-between hover:shadow-md transition-shadow">
-<div class="flex justify-between items-start mb-4">
-<div class="w-12 h-12 rounded-full bg-[#d0fbe1] flex items-center justify-center text-[#0b301c]">
-<span class="material-symbols-outlined">payments</span>
-</div>
-<span class="bg-[#d0fbe1] text-[#0b301c] px-3 py-1 rounded-full text-label-md font-label-md">Cleared</span>
-</div>
-<div>
-<p class="text-label-md font-label-md text-secondary mb-1">Fee Status</p>
-<h3 class="text-headline-lg font-headline-lg text-primary">Fully Paid</h3>
-</div>
-</div>
-<!-- Stat Card 4 -->
-<div class="bg-surface-container-lowest rounded-[1.5rem] p-6 border border-outline-variant shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] flex flex-col justify-between hover:shadow-md transition-shadow">
-<div class="flex justify-between items-start mb-4">
-<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">live_tv</span>
-</div>
-<span class="bg-surface-container text-primary px-3 py-1 rounded-full text-label-md font-label-md">In 30 mins</span>
-</div>
-<div>
-<p class="text-label-md font-label-md text-secondary mb-1">Next Live Class</p>
-<h3 class="text-headline-md font-headline-md text-primary truncate">Mathematics</h3>
-<p class="text-body-md font-body-md text-secondary">10:00 AM - 11:30 AM</p>
-</div>
-</div>
-</div>
-<!-- Bento Grid Section -->
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-6 mb-8">
-<!-- Recent Notices -->
-<div class="lg:col-span-7 bg-surface-container-lowest rounded-[1.5rem] border border-outline-variant shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] overflow-hidden flex flex-col">
-<div class="p-6 border-b border-outline-variant flex justify-between items-center bg-tertiary/5">
-<h3 class="text-headline-md font-headline-md text-primary">Recent Notices</h3>
-<button class="text-label-md font-label-md text-primary hover:underline">View All</button>
-</div>
-<div class="p-0 overflow-y-auto max-h-[320px]">
-<ul class="divide-y divide-outline-variant">
-<li class="p-4 hover:bg-surface-container-low transition-colors cursor-pointer flex gap-4">
-<div class="w-12 h-12 flex-shrink-0 bg-surface-container rounded-lg flex flex-col items-center justify-center">
-<span class="text-label-md font-label-md text-secondary uppercase">Oct</span>
-<span class="text-headline-md font-headline-md text-primary leading-none">24</span>
-</div>
-<div>
-<h4 class="text-body-lg font-body-lg font-medium text-primary mb-1">Annual Sports Meet Schedule Updated</h4>
-<p class="text-body-md font-body-md text-secondary line-clamp-2">The schedule for the upcoming Annual Sports Meet has been revised due to weather conditions. Please check your respective event timings.</p>
-</div>
-</li>
-<li class="p-4 hover:bg-surface-container-low transition-colors cursor-pointer flex gap-4">
-<div class="w-12 h-12 flex-shrink-0 bg-surface-container rounded-lg flex flex-col items-center justify-center">
-<span class="text-label-md font-label-md text-secondary uppercase">Oct</span>
-<span class="text-headline-md font-headline-md text-primary leading-none">22</span>
-</div>
-<div>
-<h4 class="text-body-lg font-body-lg font-medium text-primary mb-1">Mid-Term Examination Results Declared</h4>
-<p class="text-body-md font-body-md text-secondary line-clamp-2">Results for grades 8 through 12 have been published. Parents can access the detailed report cards via the student portal.</p>
-</div>
-</li>
-<li class="p-4 hover:bg-surface-container-low transition-colors cursor-pointer flex gap-4">
-<div class="w-12 h-12 flex-shrink-0 bg-surface-container rounded-lg flex flex-col items-center justify-center">
-<span class="text-label-md font-label-md text-secondary uppercase">Oct</span>
-<span class="text-headline-md font-headline-md text-primary leading-none">18</span>
-</div>
-<div>
-<h4 class="text-body-lg font-body-lg font-medium text-primary mb-1">Diwali Holidays Announcement</h4>
-<p class="text-body-md font-body-md text-secondary line-clamp-2">The school will remain closed from Nov 1st to Nov 5th for Diwali celebrations. Classes resume on Nov 6th.</p>
-</div>
-</li>
-</ul>
-</div>
-</div>
-<!-- Upcoming Events / Calendar -->
-<div class="lg:col-span-5 bg-surface-container-lowest rounded-[1.5rem] border border-outline-variant shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] p-6">
-<div class="flex justify-between items-center mb-6">
-<h3 class="text-headline-md font-headline-md text-primary">Upcoming Events</h3>
-<div class="flex gap-2">
-<button class="w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-sm">chevron_left</span></button>
-<button class="w-8 h-8 rounded-full border border-outline-variant flex items-center justify-center hover:bg-surface-container transition-colors"><span class="material-symbols-outlined text-sm">chevron_right</span></button>
-</div>
-</div>
-<div class="space-y-4">
-<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant flex items-center gap-4 relative overflow-hidden group">
-<div class="absolute left-0 top-0 bottom-0 w-1 bg-primary"></div>
-<div class="w-10 h-10 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">science</span>
-</div>
-<div class="flex-1">
-<h4 class="text-body-lg font-body-lg font-medium text-primary">Science Fair Project Submission</h4>
-<p class="text-label-md font-label-md text-secondary mt-1">Tomorrow, 3:00 PM</p>
-</div>
-</div>
-<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant flex items-center gap-4 relative overflow-hidden group">
-<div class="absolute left-0 top-0 bottom-0 w-1 bg-secondary"></div>
-<div class="w-10 h-10 rounded-full bg-secondary-container flex items-center justify-center text-secondary">
-<span class="material-symbols-outlined">groups</span>
-</div>
-<div class="flex-1">
-<h4 class="text-body-lg font-body-lg font-medium text-primary">Parent-Teacher Meeting</h4>
-<p class="text-label-md font-label-md text-secondary mt-1">Saturday, Oct 28 • 9:00 AM</p>
-</div>
-</div>
-<div class="bg-surface-container-low p-4 rounded-xl border border-outline-variant flex items-center gap-4 relative overflow-hidden group">
-<div class="absolute left-0 top-0 bottom-0 w-1 bg-tertiary-container"></div>
-<div class="w-10 h-10 rounded-full bg-surface-dim flex items-center justify-center text-tertiary-container">
-<span class="material-symbols-outlined">directions_bus</span>
-</div>
-<div class="flex-1">
-<h4 class="text-body-lg font-body-lg font-medium text-primary">Field Trip to Planetarium</h4>
-<p class="text-label-md font-label-md text-secondary mt-1">Monday, Oct 30 • 8:30 AM</p>
-</div>
-</div>
-</div>
-<button class="w-full mt-4 py-2 border border-outline-variant rounded-lg text-label-md font-label-md text-primary hover:bg-surface-container-low transition-colors">View Full Calendar</button>
-</div>
-</div>
-<!-- Quick Actions -->
-<div>
-<h3 class="text-headline-md font-headline-md text-primary mb-4">Quick Actions</h3>
-<div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
-<button class="bg-surface-container-lowest rounded-[1.5rem] p-4 border border-outline-variant shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] flex flex-col items-center justify-center gap-3 hover:bg-primary hover:text-on-primary group transition-all h-32">
-<span class="material-symbols-outlined text-3xl text-secondary group-hover:text-on-primary transition-colors">upload_file</span>
-<span class="text-label-md font-label-md text-center">Submit<br/>Homework</span>
-</button>
-<button class="bg-surface-container-lowest rounded-[1.5rem] p-4 border border-outline-variant shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] flex flex-col items-center justify-center gap-3 hover:bg-primary hover:text-on-primary group transition-all h-32">
-<span class="material-symbols-outlined text-3xl text-secondary group-hover:text-on-primary transition-colors">grading</span>
-<span class="text-label-md font-label-md text-center">View<br/>Marks</span>
-</button>
-<button class="bg-surface-container-lowest rounded-[1.5rem] p-4 border border-outline-variant shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] flex flex-col items-center justify-center gap-3 hover:bg-primary hover:text-on-primary group transition-all h-32">
-<span class="material-symbols-outlined text-3xl text-secondary group-hover:text-on-primary transition-colors">credit_card</span>
-<span class="text-label-md font-label-md text-center">Pay<br/>Fees</span>
-</button>
-<button class="bg-surface-container-lowest rounded-[1.5rem] p-4 border border-outline-variant shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] flex flex-col items-center justify-center gap-3 hover:bg-primary hover:text-on-primary group transition-all h-32">
-<span class="material-symbols-outlined text-3xl text-secondary group-hover:text-on-primary transition-colors">video_camera_front</span>
-<span class="text-label-md font-label-md text-center">Join<br/>Class</span>
-</button>
-<button class="bg-surface-container-lowest rounded-[1.5rem] p-4 border border-outline-variant shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] flex flex-col items-center justify-center gap-3 hover:bg-primary hover:text-on-primary group transition-all h-32">
-<span class="material-symbols-outlined text-3xl text-secondary group-hover:text-on-primary transition-colors">book</span>
-<span class="text-label-md font-label-md text-center">Library<br/>Books</span>
-</button>
-<button class="bg-surface-container-lowest rounded-[1.5rem] p-4 border border-outline-variant shadow-[0_1px_3px_0_rgba(0,0,0,0.1),0_1px_2px_-1px_rgba(0,0,0,0.1)] flex flex-col items-center justify-center gap-3 hover:bg-primary hover:text-on-primary group transition-all h-32 border-dashed border-2">
-<span class="material-symbols-outlined text-3xl text-outline-variant group-hover:text-on-primary transition-colors">add</span>
-<span class="text-label-md font-label-md text-outline-variant group-hover:text-on-primary text-center">Add<br/>Shortcut</span>
-</button>
-</div>
-</div>
-</main>
-</div>
-</body></html>
+
+<body>
+
+<!-- ================= LOGIN ================= -->
+
+<section class="login-page" id="loginPage">
+
+    <div class="login-card">
+
+        <div class="school-logo">
+            <span class="material-symbols-outlined">school</span>
+        </div>
+
+        <h1>Student Portal</h1>
+
+        <p class="subtitle">
+            Abhinav Public School · Pitampura
+        </p>
+
+        <form id="loginForm">
+
+            <div class="field">
+                <label>Student ID</label>
+
+                <div class="input-box">
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+
+                    <input
+                        id="username"
+                        type="text"
+                        placeholder="Enter your student ID"
+                        required
+                    >
+                </div>
+            </div>
+
+            <div class="field">
+                <label>Password</label>
+
+                <div class="input-box">
+                    <span class="material-symbols-outlined">
+                        lock
+                    </span>
+
+                    <input
+                        id="password"
+                        type="password"
+                        placeholder="Enter your password"
+                        required
+                    >
+                </div>
+            </div>
+
+            <button class="login-btn" type="submit">
+                Sign In
+            </button>
+
+            <div class="error" id="error">
+                Invalid student ID or password.
+            </div>
+
+        </form>
+
+        <div class="demo">
+            <b>Prototype Demo</b><br>
+            ID: APS2026 &nbsp;•&nbsp; Password: demo123
+        </div>
+
+        <div class="footer">
+            Student Portal · Prototype
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- ================= DASHBOARD ================= -->
+
+<section class="dashboard" id="dashboard">
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-icon">
+                <span class="material-symbols-outlined">school</span>
+            </div>
+
+            <div>
+                <h2>Abhinav Public School</h2>
+                <p>Student Portal</p>
+            </div>
+
+        </div>
+
+        <div class="nav">
+
+            <button class="nav-item active">
+                <span class="material-symbols-outlined">dashboard</span>
+                Dashboard
+            </button>
+
+            <button class="nav-item">
+                <span class="material-symbols-outlined">person_search</span>
+                Student Register
+            </button>
+
+            <button class="nav-item">
+                <span class="material-symbols-outlined">calendar_today</span>
+                Attendance
+            </button>
+
+            <button class="nav-item">
+                <span class="material-symbols-outlined">menu_book</span>
+                Homework
+            </button>
+
+            <button class="nav-item">
+                <span class="material-symbols-outlined">payments</span>
+                School Fee
+            </button>
+
+            <button class="nav-item">
+                <span class="material-symbols-outlined">live_tv</span>
+                Live Classes
+            </button>
+
+            <button class="nav-item">
+                <span class="material-symbols-outlined">announcement</span>
+                Notice Board
+            </button>
+
+            <button class="nav-item">
+                <span class="material-symbols-outlined">textsms</span>
+                SMS
+            </button>
+
+            <div style="height:80px"></div>
+
+            <button class="nav-item">
+                <span class="material-symbols-outlined">account_circle</span>
+                Profile
+            </button>
+
+            <button class="nav-item">
+                <span class="material-symbols-outlined">settings</span>
+                Settings
+            </button>
+
+            <button class="nav-item" onclick="logout()">
+                <span class="material-symbols-outlined">logout</span>
+                Logout
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <div class="main">
+
+        <header class="topbar">
+
+            <input
+                class="search"
+                placeholder="Search students, classes or notices..."
+            >
+
+            <div class="profile">
+
+                <div class="avatar">
+                    <span class="material-symbols-outlined">
+                        person
+                    </span>
+                </div>
+
+                <span>Ishaan</span>
+
+            </div>
+
+        </header>
+
+
+        <main class="content">
+
+            <div class="welcome">
+
+                <h1>Good Morning, Ishaan</h1>
+
+                <p>
+                    Here's your school overview for today.
+                </p>
+
+            </div>
+
+
+            <div class="stats">
+
+                <div class="card">
+
+                    <div class="stat-icon">
+                        <span class="material-symbols-outlined">
+                            calendar_today
+                        </span>
+                    </div>
+
+                    <div class="stat-label">
+                        Attendance
+                    </div>
+
+                    <div class="stat-value">
+                        94.2%
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="stat-icon">
+                        <span class="material-symbols-outlined">
+                            menu_book
+                        </span>
+                    </div>
+
+                    <div class="stat-label">
+                        Pending Homework
+                    </div>
+
+                    <div class="stat-value">
+                        5 Tasks
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="stat-icon">
+                        <span class="material-symbols-outlined">
+                            payments
+                        </span>
+                    </div>
+
+                    <div class="stat-label">
+                        Fee Status
+                    </div>
+
+                    <div class="stat-value">
+                        Paid
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="stat-icon">
+                        <span class="material-symbols-outlined">
+                            live_tv
+                        </span>
+                    </div>
+
+                    <div class="stat-label">
+                        Next Class
+                    </div>
+
+                    <div class="stat-value">
+                        Mathematics
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="grid">
+
+                <div class="card">
+
+                    <div class="card-title">
+                        Recent Notices
+                    </div>
+
+                    <div class="notice">
+
+                        <h3>Annual Sports Meet</h3>
+
+                        <p>
+                            Updated schedule and event timings
+                            have been published.
+                        </p>
+
+                    </div>
+
+                    <div class="notice">
+
+                        <h3>Examination Results</h3>
+
+                        <p>
+                            Examination results are now available
+                            through the student portal.
+                        </p>
+
+                    </div>
+
+                    <div class="notice">
+
+                        <h3>School Holiday Notice</h3>
+
+                        <p>
+                            Please check the latest school
+                            calendar for upcoming holidays.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card">
+
+                    <div class="card-title">
+                        Upcoming Events
+                    </div>
+
+                    <div class="event">
+
+                        <div class="event-icon">
+                            <span class="material-symbols-outlined">
+                                science
+                            </span>
+                        </div>
+
+                        <div>
+                            <h3>Science Fair</h3>
+                            <p>Tomorrow · 3:00 PM</p>
+                        </div>
+
+                    </div>
+
+                    <div class="event">
+
+                        <div class="event-icon">
+                            <span class="material-symbols-outlined">
+                                groups
+                            </span>
+                        </div>
+
+                        <div>
+                            <h3>Parent-Teacher Meeting</h3>
+                            <p>Saturday · 9:00 AM</p>
+                        </div>
+
+                    </div>
+
+                    <div class="event">
+
+                        <div class="event-icon">
+                            <span class="material-symbols-outlined">
+                                directions_bus
+                            </span>
+                        </div>
+
+                        <div>
+                            <h3>School Field Trip</h3>
+                            <p>Monday · 8:30 AM</p>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </main>
+
+    </div>
+
+</section>
+
+
+<script>
+
+    const loginForm = document.getElementById("loginForm");
+
+    loginForm.addEventListener("submit", function(e) {
+
+        e.preventDefault();
+
+        const username =
+            document.getElementById("username").value.trim();
+
+        const password =
+            document.getElementById("password").value;
+
+        const error =
+            document.getElementById("error");
+
+        /*
+            DEMO ONLY
+
+            This is NOT connected to the school's
+            authentication system.
+        */
+
+        if (
+            username === "APS2026" &&
+            password === "demo123"
+        ) {
+
+            document.getElementById("loginPage").style.display = "none";
+
+            document.getElementById("dashboard").style.display = "block";
+
+        } else {
+
+            error.style.display = "block";
+
+        }
+
+    });
+
+
+    function logout() {
+
+        document.getElementById("dashboard").style.display = "none";
+
+        document.getElementById("loginPage").style.display = "flex";
+
+        document.getElementById("loginForm").reset();
+
+        document.getElementById("error").style.display = "none";
+
+    }
+
+</script>
+
+</body>
+</html>
