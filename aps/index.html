@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>APS</title>
+    <title>STQRKVI — Under Development</title>
 
     <style>
         * {
@@ -18,55 +18,117 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #0a0a0a;
-            color: white;
-            font-family: Arial, sans-serif;
+            background: #050505;
+            color: #fff;
+            font-family: Arial, Helvetica, sans-serif;
+            padding: 20px;
         }
 
         .container {
+            width: 100%;
+            max-width: 650px;
             text-align: center;
-            padding: 40px;
+        }
+
+        .logo {
+            font-size: 22px;
+            font-weight: 700;
+            letter-spacing: 3px;
+            margin-bottom: 70px;
+        }
+
+        .badge {
+            display: inline-block;
+            padding: 8px 14px;
+            border: 1px solid #333;
+            border-radius: 50px;
+            color: #aaa;
+            font-size: 12px;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
         }
 
         h1 {
-            font-size: 50px;
-            margin-bottom: 15px;
+            font-size: clamp(42px, 8vw, 72px);
+            letter-spacing: -3px;
+            margin-bottom: 20px;
         }
 
-        p {
-            color: #999;
-            font-size: 18px;
-            margin-bottom: 30px;
+        .description {
+            color: #888;
+            font-size: 17px;
+            line-height: 1.6;
+            max-width: 500px;
+            margin: auto;
         }
 
-        .button {
-            display: inline-block;
-            padding: 12px 25px;
-            background: white;
-            color: black;
-            text-decoration: none;
-            border-radius: 8px;
-            transition: 0.2s;
+        .status {
+            margin: 45px auto;
+            padding: 25px;
+            border: 1px solid #222;
+            border-radius: 16px;
+            background: #0b0b0b;
         }
 
-        .button:hover {
-            transform: scale(1.05);
-            opacity: 0.85;
+        .status-title {
+            color: #777;
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 10px;
+        }
+
+        .time {
+            font-size: 32px;
+            font-weight: 600;
+        }
+
+        .note {
+            margin-top: 10px;
+            color: #666;
+            font-size: 13px;
+        }
+
+        footer {
+            color: #444;
+            font-size: 12px;
+            margin-top: 60px;
         }
     </style>
 </head>
 
 <body>
 
-    <div class="container">
-        <h1>APS</h1>
+    <main class="container">
 
-        <p>Welcome to my page.</p>
+        <div class="logo">STQRKVI</div>
 
-        <a href="https://stqrkvi.lol" class="button">
-            Main Website
-        </a>
-    </div>
+        <div class="badge">OFFICIAL STATUS</div>
+
+        <h1>Under Development</h1>
+
+        <p class="description">
+            STQRKVI is currently undergoing development and improvements.
+            We are working on building the next version of the platform.
+        </p>
+
+        <div class="status">
+            <div class="status-title">Estimated Development Time</div>
+
+            <div class="time">
+                365 Days
+            </div>
+
+            <div class="note">
+                Estimated timeline • Subject to change
+            </div>
+        </div>
+
+        <footer>
+            © 2026 STQRKVI. All rights reserved.
+        </footer>
+
+    </main>
 
 </body>
 </html>
