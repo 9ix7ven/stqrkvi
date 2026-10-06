@@ -1,277 +1,219 @@
+```html
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<html class="scroll-smooth dark" lang="en"><head>
-<meta charset="utf-8"/>
-<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>GlowCient | Clean Code. Real Impact.</title>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-<script id="tailwind-config">tailwind.config = {darkMode: "class", theme: {extend: {colors: {"on-background": "#efdfde", "inverse-primary": "#874e58", "on-primary": "#50212b", "on-error": "#690005", "surface-tint": "#fcb3be", "on-secondary-container": "#ff95b4", "error-container": "#93000a", "on-secondary-fixed-variant": "#8b0e45", "secondary-container": "#8b0e45", "surface-bright": "#413737", "tertiary-fixed": "#ffdbce", "on-error-container": "#ffdad6", "inverse-on-surface": "#382e2e", "on-tertiary-container": "#6a4e44", "secondary-fixed": "#ffd9e1", error: "#ffb4ab", "surface-container-highest": "#3c3232", "on-secondary": "#65002f", "surface-container-high": "#312828", "on-primary-container": "#7b444e", "on-surface-variant": "#d6c2c3", "on-tertiary-fixed-variant": "#5b4137", "tertiary-fixed-dim": "#e4beb2", "on-primary-fixed-variant": "#6b3741", surface: "#191111", "on-surface": "#efdfde", "on-tertiary": "#422b22", outline: "#9e8c8e", "inverse-surface": "#efdfde", "on-tertiary-fixed": "#2b160f", "surface-variant": "#3c3232", "primary-fixed": "#ffd9de", "primary-fixed-dim": "#fcb3be", secondary: "#ffb1c5", "surface-dim": "#191111", "tertiary-container": "#e7c1b4", "outline-variant": "#514345", tertiary: "#ffded3", "on-primary-fixed": "#360c17", "surface-container": "#261d1e", "on-secondary-fixed": "#3f001b", "primary-container": "#ffb6c1", "surface-container-low": "#221a1a", "secondary-fixed-dim": "#ffb1c5", background: "#191111", primary: "#ffdde1", "surface-container-lowest": "#140c0c"}, borderRadius: {DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px"}, fontFamily: {headline: ["Inter"], body: ["Inter"], label: ["Inter"], display: "Inter"}}}};</script>
-<style>
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-        }
-        .glass-card {
-            background: rgba(42, 42, 42, 0.4);
-            backdrop-filter: blur(20px);
-            border: 1px solid rgba(173, 136, 132, 0.1);
-        }
-        .hero-gradient {
-            background: radial-gradient(circle at 50% 50%, rgba(255, 84, 78, 0.15) 0%, rgba(19, 19, 19, 1) 70%);
-        }
-        .grid-overlay {
-            background-image: linear-gradient(rgba(226, 226, 226, 0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(226, 226, 226, 0.05) 1px, transparent 1px);
-            background-size: 24px 24px;
-        }
-        .glow-hover:hover {
-            box-shadow: 0 0 25px rgba(255, 84, 78, 0.4);
-        }
-        .tonal-layering-with-backdrop-blur {
-            backdrop-filter: blur(20px);
-            background-color: rgba(19, 19, 19, 0.7);
-        }
-    </style>
+    <title>stqrkvi × zero | Developers</title>
+
+    <link rel="stylesheet" href="style.css">
 </head>
-<body class="bg-surface text-on-surface font-body selection:bg-primary-container selection:text-on-primary-container">
-<!-- TopNavBar -->
-<nav class="fixed top-0 w-full z-50 border-b border-[#ffffff]/10 tonal-layering-with-backdrop-blur">
-<div class="flex justify-between items-center max-w-7xl mx-auto px-8 py-4">
-<div class="text-2xl font-bold tracking-tighter text-[#e2e2e2]" style=""><span class="text-primary-container" style=""><font color="#e2e2e2">GlowCient</font></span></div>
-<div class="hidden md:flex gap-8 font-['Space_Grotesk'] uppercase tracking-wider text-sm">
-<a class="text-[#ffb3ac] border-b border-[#ffb3ac] pb-1 duration-300 ease-in-out" href="#home" style="">Home</a>
-<a class="text-[#e2e2e2] hover:text-[#ffb3ac] transition-colors duration-300 ease-in-out" href="#services" style="">Services</a>
-<a class="text-[#e2e2e2] hover:text-[#ffb3ac] transition-colors duration-300 ease-in-out" href="#team" style="">Team</a>
-<a class="text-[#e2e2e2] hover:text-[#ffb3ac] transition-colors duration-300 ease-in-out" href="#about" style="">About</a>
-<a class="text-[#e2e2e2] hover:text-[#ffb3ac] transition-colors duration-300 ease-in-out" href="#contact" style="">Contact</a>
-</div>
-<button class="bg-primary-container text-on-primary-container px-6 py-2 rounded-lg font-bold uppercase tracking-widest text-xs hover:bg-primary transition-colors duration-300 active:scale-95 transition-transform" style="">
-                Get Started
-            </button>
-</div>
-</nav>
-<main>
-<!-- Hero Section -->
-<section class="relative min-h-screen flex items-center pt-20 overflow-hidden" id="home">
-<div class="absolute inset-0 grid-overlay"></div>
-<div class="absolute inset-0 hero-gradient"></div>
-<div class="max-w-7xl mx-auto px-8 grid grid-cols-1 lg:grid-cols-2 gap-16 relative z-10 items-center">
-<div>
-<div class="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-secondary-container/30 border border-outline-variant/20 mb-6">
-<span class="w-2 h-2 rounded-full bg-primary animate-pulse"></span>
-<span class="text-xs font-label font-medium text-primary tracking-widest uppercase" style="">Built with care. Powered by code.</span>
-</div>
-<h1 class="font-headline text-5xl md:text-7xl font-bold leading-tight mb-6 tracking-tight" style="">
-<span class="text-primary-container" style="">Clean Code.</span><br/>
-<span class="text-on-surface" style="">Real Impact.</span>
-</h1>
-<p class="text-on-surface/70 text-lg md:text-xl max-w-lg mb-10 leading-relaxed" style="">
-                        We craft exceptional websites, apps, bots, and automation tools designed to scale with your ambition.
-                    </p>
-<div class="flex flex-wrap gap-4">
-<a class="inline-block bg-primary-container text-on-primary-container px-8 py-4 rounded-lg font-bold text-sm tracking-widest uppercase glow-hover transition-all duration-300 active:scale-95" href="#team" style="">Meet Our Team</a>
-<a class="inline-block border border-outline px-8 py-4 rounded-lg font-bold text-sm tracking-widest uppercase hover:bg-surface-variant transition-all duration-300 active:scale-95" href="#contact" style="">Get In Touch</a>
-</div>
-</div>
-<div class="grid grid-cols-2 gap-4">
-<!-- Feature Grid -->
-<div class="glass-card p-8 rounded-xl group hover:translate-y-[-8px] transition-all duration-500">
-<span class="material-symbols-outlined text-primary mb-4 text-3xl" data-icon="code" style="">code</span>
-<h3 class="font-headline font-bold text-xl mb-2" style="">Code</h3>
-<p class="text-sm text-on-surface/60 font-body" style="">Architecture-first approach to robust systems.</p>
-</div>
-<div class="glass-card p-8 rounded-xl group hover:translate-y-[-8px] transition-all duration-500 translate-y-8">
-<span class="material-symbols-outlined text-tertiary mb-4 text-3xl" data-icon="build" style="">build</span>
-<h3 class="font-headline font-bold text-xl mb-2" style="">Build</h3>
-<p class="text-sm text-on-surface/60 font-body" style="">Rapid prototyping with production-ready quality.</p>
-</div>
-<div class="glass-card p-8 rounded-xl group hover:translate-y-[-8px] transition-all duration-500">
-<span class="material-symbols-outlined text-secondary mb-4 text-3xl" data-icon="rocket_launch" style="">rocket_launch</span>
-<h3 class="font-headline font-bold text-xl mb-2" style="">Deploy</h3>
-<p class="text-sm text-on-surface/60 font-body" style="">Seamless integration and CI/CD pipelines.</p>
-</div>
-<div class="glass-card p-8 rounded-xl group hover:translate-y-[-8px] transition-all duration-500 translate-y-8">
-<span class="material-symbols-outlined text-primary-container mb-4 text-3xl" data-icon="trending_up" style="">trending_up</span>
-<h3 class="font-headline font-bold text-xl mb-2" style="">Scale</h3>
-<p class="text-sm text-on-surface/60 font-body" style="">Infrastructures that grow with your user base.</p>
-</div>
-</div>
-</div>
-<!-- Scroll Indicator -->
-<div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 opacity-50">
-<span class="text-[10px] uppercase tracking-[0.3em] font-label" style="">Scroll</span>
-<div class="w-[1px] h-12 bg-gradient-to-b from-primary to-transparent"></div>
-</div>
-</section>
-<!-- Services Section -->
-<section class="py-32 bg-surface-container-low" id="services">
-<div class="max-w-7xl mx-auto px-8">
-<div class="mb-20 text-center md:text-left">
-<h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-4" style="">What We Do</h2>
-<p class="text-on-surface/60 max-w-xl" style="">Specialized digital engineering services tailored for the void of modern competition.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-<div class="glass-card p-10 rounded-xl group hover:scale-[1.02] transition-all duration-500">
-<div class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-primary" data-icon="web" style="">web</span>
-</div>
-<h3 class="font-headline font-bold text-xl mb-4" style="">Custom Websites</h3>
-<p class="text-on-surface/60 text-sm leading-relaxed" style="">High-performance landing pages and editorial experiences built with precision.</p>
-</div>
-<div class="glass-card p-10 rounded-xl group hover:scale-[1.02] transition-all duration-500">
-<div class="w-12 h-12 rounded-lg bg-tertiary-container/20 flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-tertiary" data-icon="apps" style="">apps</span>
-</div>
-<h3 class="font-headline font-bold text-xl mb-4" style="">Web Applications</h3>
-<p class="text-on-surface/60 text-sm leading-relaxed" style="">Complex dashboards and SaaS products focused on user experience and speed.</p>
-</div>
-<div class="glass-card p-10 rounded-xl group hover:scale-[1.02] transition-all duration-500">
-<div class="w-12 h-12 rounded-lg bg-secondary-container/20 flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-secondary" data-icon="smart_toy" style="">smart_toy</span>
-</div>
-<h3 class="font-headline font-bold text-xl mb-4" style="">Discord Bots</h3>
-<p class="text-on-surface/60 text-sm leading-relaxed" style="">Advanced community engagement tools and automated moderation systems.</p>
-</div>
-<div class="glass-card p-10 rounded-xl group hover:scale-[1.02] transition-all duration-500">
-<div class="w-12 h-12 rounded-lg bg-primary-container/20 flex items-center justify-center mb-6">
-<span class="material-symbols-outlined text-primary" data-icon="bolt" style="">bolt</span>
-</div>
-<h3 class="font-headline font-bold text-xl mb-4" style="">Automation Tools</h3>
-<p class="text-on-surface/60 text-sm leading-relaxed" style="">Custom scripts and workflows that save your team hundreds of manual hours.</p>
-</div>
-</div>
-</div>
-</section>
-<!-- Team Section -->
-<section class="py-32 bg-surface" id="team">
-<div class="max-w-7xl mx-auto px-8">
-<div class="text-center mb-20">
-<h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-4" style="">Meet The Founders</h2>
-<div class="w-20 h-1 bg-primary-container mx-auto"></div>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
-<div class="glass-card p-12 rounded-2xl flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
-<div class="relative">
-<div class="absolute inset-0 bg-primary-container/20 rounded-full blur-xl"></div>
-<img class="w-32 h-32 rounded-full object-cover relative z-10 border-2 border-primary-container/30" data-alt="professional portrait of a tech founder with a minimalist black background and dramatic lighting" src="https://i.pinimg.com/736x/3b/99/9b/3b999b1d39c3d9354b9bbdd2657dc799.jpg" style=""/>
-</div>
-<div class="flex-1">
-<h3 class="text-2xl font-headline font-bold mb-1" style="">STQRKVI</h3>
-<p class="text-primary-container text-sm font-label tracking-widest uppercase mb-4" style="">Chief Architect</p>
-<p class="text-on-surface/70 text-sm leading-relaxed mb-6 italic" style="">"Engineering is not just about solving problems; it's about defining the invisible structures of the future."</p>
-<div class="flex justify-center md:justify-start gap-4">
-<a class="text-on-surface/40 hover:text-primary transition-colors" href="#" style=""><span class="material-symbols-outlined" data-icon="data_object" style="">data_object</span></a>
-<a class="text-on-surface/40 hover:text-primary transition-colors" href="#" style=""><span class="material-symbols-outlined" data-icon="code" style="">code</span></a>
-<a class="text-on-surface/40 hover:text-primary transition-colors" href="#" style=""><span class="material-symbols-outlined" data-icon="share" style="">share</span></a>
-</div>
-</div>
-</div>
-<div class="glass-card p-12 rounded-2xl flex flex-col md:flex-row gap-8 items-center md:items-start text-center md:text-left">
-<div class="relative">
-<div class="absolute inset-0 bg-tertiary-container/20 rounded-full blur-xl"></div>
-<img class="w-32 h-32 rounded-full object-cover relative z-10 border-2 border-tertiary-container/30" data-alt="portrait of a confident female tech leader with modern spectacles in a high-tech studio environment" src="https://i.pinimg.com/736x/9b/d1/ff/9bd1ffa4fbd3555032195958503f8d8a.jpg" style=""/>
-</div>
-<div class="flex-1">
-<h3 class="text-2xl font-headline font-bold mb-1" style="">HARSH</h3>
-<p class="text-tertiary-container text-sm font-label tracking-widest uppercase mb-4" style="">Lead Product Designer</p>
-<p class="text-on-surface/70 text-sm leading-relaxed mb-6 italic" style="">"Design is the bridge between human emotion and technical logic. We build the most stable bridges."</p>
-<div class="flex justify-center md:justify-start gap-4">
-<a class="text-on-surface/40 hover:text-tertiary transition-colors" href="#" style=""><span class="material-symbols-outlined" data-icon="palette" style="">palette</span></a>
-<a class="text-on-surface/40 hover:text-tertiary transition-colors" href="#" style=""><span class="material-symbols-outlined" data-icon="link" style="">link</span></a>
-<a class="text-on-surface/40 hover:text-tertiary transition-colors" href="#" style=""><span class="material-symbols-outlined" data-icon="public" style="">public</span></a>
-</div>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- About & Stats Section -->
-<section class="py-32 bg-surface-container-lowest relative overflow-hidden" id="about">
-<div class="max-w-7xl mx-auto px-8 relative z-10">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
-<div>
-<h2 class="font-headline text-4xl md:text-5xl font-extrabold mb-8" style="">Our Philosophy</h2>
-<div class="space-y-6 text-on-surface/70 text-lg leading-relaxed">
-<p class="" style="">Glowcient was founded in the silence of the digital void—a place where quality is the only currency that matters. We don't believe in "good enough." Every line of code we write and every pixel we place is part of a larger mission to create systems that aren't just functional, but immortal.</p>
-<p class="" style="">Our team operates at the intersection of high-end aesthetics and industrial-grade stability. We treat your projects not as tasks, but as technical legacies.</p>
-</div>
-</div>
-<div class="grid grid-cols-1 gap-6">
-<div class="p-8 rounded-xl bg-surface-container-high border-l-4 border-primary-container">
-<span class="font-headline text-5xl font-black text-on-surface mb-2 block" style="">20+</span>
-<span class="text-primary uppercase tracking-[0.2em] font-label text-xs" style="">Projects Delivered</span>
-</div>
-<div class="p-8 rounded-xl bg-surface-container-high border-l-4 border-tertiary">
-<span class="font-headline text-5xl font-black text-on-surface mb-2 block" style="">100%</span>
-<span class="text-tertiary uppercase tracking-[0.2em] font-label text-xs" style="">Client Satisfaction</span>
-</div>
-<div class="p-8 rounded-xl bg-surface-container-high border-l-4 border-secondary">
-<span class="font-headline text-5xl font-black text-on-surface mb-2 block" style="">24/7</span>
-<span class="text-secondary uppercase tracking-[0.2em] font-label text-xs" style="">Support Commitment</span>
-</div>
-</div>
-</div>
-</div>
-</section>
-<!-- CTA Section -->
-<section class="py-32 relative" id="contact">
-  <div class="max-w-5xl mx-auto px-8 text-center glass-card py-20 rounded-3xl relative">
-    
-    <div class="absolute inset-0 bg-primary-container/5 rounded-3xl -z-10"></div>
-    
-    <h2 class="font-headline text-4xl md:text-6xl font-black mb-8 leading-tight">
-      Got an idea?<br/>
-      <span class="text-primary">Let's build it.</span>
-    </h2>
-    
-    <p class="text-on-surface/60 mb-12 max-w-2xl mx-auto text-lg">
-      Whether it's a simple site or a complex automation engine, we are ready to bring your vision into the void.
-    </p>
 
-    <div class="flex flex-wrap justify-center gap-6">
+<body>
 
-      <!-- EMAIL (FIXED) -->
-      <a href="mailto:oncewasishaan@gmail.com"
-         class="flex items-center gap-3 bg-surface-container-highest px-8 py-4 rounded-xl hover:bg-primary-container transition-all group active:scale-95">
-        <span class="material-symbols-outlined">mail</span>
-        <span class="font-bold tracking-wider">Email Us</span>
-      </a>
+    <nav>
+        <div class="logo">
+            stqrkvi <span>×</span> zero
+        </div>
 
-      <!-- DISCORD (FIXED) -->
-      <a href="https://discord.com/channels/@me/1412431570832461894"
-         target="_blank"
-         class="flex items-center gap-3 bg-surface-container-highest px-8 py-4 rounded-xl hover:bg-[#5865F2] transition-all group active:scale-95">
-        <span class="material-symbols-outlined">forum</span>
-        <span class="font-bold tracking-wider">Discord</span>
-      </a>
+        <div class="nav-links">
+            <a href="#developers">Developers</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+        </div>
+    </nav>
 
-      <!-- INSTAGRAM (NEW 🔥) -->
-      <a href="https://instagram.com/messwishaan"
-         target="_blank"
-         class="flex items-center gap-3 bg-surface-container-highest px-8 py-4 rounded-xl hover:bg-pink-500 transition-all group active:scale-95">
-        <span class="material-symbols-outlined">photo_camera</span>
-        <span class="font-bold tracking-wider">Instagram</span>
-      </a>
 
-    </div>
-  </div>
-</section>
-<!-- Footer -->
-<footer class="bg-surface-container-lowest py-20 border-t border-outline-variant/10">
-<div class="max-w-7xl mx-auto px-8 flex flex-col items-center">
-<div class="text-3xl font-black text-[#e2e2e2] mb-4" style="">Glow<font color="#ff544e">Cient</font></div>
-<p class="text-on-surface/40 font-label tracking-widest uppercase text-xs mb-10" style="">Built with code. Made with purpose.</p>
-<div class="flex flex-wrap justify-center gap-8 mb-12 text-sm font-label font-medium text-on-surface/60">
-<a class="hover:text-primary-container transition-colors" href="#" style="">Privacy Policy</a>
-<a class="hover:text-primary-container transition-colors" href="#" style="">Terms of Service</a>
-<a class="hover:text-primary-container transition-colors" href="mailto:oncewasishaan.com" style="">Email</a>
-<a class="hover:text-primary-container transition-colors" href="https://discord.gg/example" rel="noopener noreferrer" style="" target="_blank">Discord</a>
-<a class="hover:text-primary-container transition-colors" href="https://www.instagram.com/messwishaan/" rel="noopener noreferrer" style="" target="_blank">Instagram</a>
-</div>
-<div class="text-on-surface/30 text-[10px] uppercase tracking-[0.4em] font-label" style="">
-                © 2024 GlOWCIeNT. Engineered for the void.
+    <main>
+
+        <!-- Hero -->
+        <section class="hero">
+
+            <div class="hero-content">
+
+                <p class="small-text">TWO DEVELOPERS. ONE VISION.</p>
+
+                <h1>
+                    stqrkvi <span>×</span> zero
+                </h1>
+
+                <p class="description">
+                    We build websites, Discord bots, tools and digital
+                    experiences with clean code and creative ideas.
+                </p>
+
+                <div class="buttons">
+                    <a href="#developers" class="btn primary">
+                        Meet the developers
+                    </a>
+
+                    <a href="#projects" class="btn">
+                        View projects
+                    </a>
+                </div>
+
             </div>
-</div>
-</footer>
-</body></html>
+
+        </section>
+
+
+        <!-- Developers -->
+        <section id="developers">
+
+            <div class="section-header">
+                <p>01</p>
+                <h2>Developers</h2>
+            </div>
+
+            <div class="developer-grid">
+
+                <div class="developer-card">
+
+                    <div class="card-top">
+                        <span class="number">01</span>
+                        <span class="status">AVAILABLE</span>
+                    </div>
+
+                    <h3>stqrkvi</h3>
+
+                    <p class="role">
+                        Developer / Builder
+                    </p>
+
+                    <p class="bio">
+                        Interested in web development, Discord bots,
+                        automation and experimenting with new technologies.
+                    </p>
+
+                    <div class="skills">
+                        <span>HTML</span>
+                        <span>CSS</span>
+                        <span>JavaScript</span>
+                        <span>Node.js</span>
+                        <span>Python</span>
+                        <span>Discord.js</span>
+                    </div>
+
+                </div>
+
+
+                <div class="developer-card">
+
+                    <div class="card-top">
+                        <span class="number">02</span>
+                        <span class="status">AVAILABLE</span>
+                    </div>
+
+                    <h3>zero</h3>
+
+                    <p class="role">
+                        Developer / Creator
+                    </p>
+
+                    <p class="bio">
+                        Creating digital projects, experimenting with
+                        software and turning ideas into working products.
+                    </p>
+
+                    <div class="skills">
+                        <span>JavaScript</span>
+                        <span>Node.js</span>
+                        <span>Python</span>
+                        <span>APIs</span>
+                        <span>Web</span>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Projects -->
+        <section id="projects">
+
+            <div class="section-header">
+                <p>02</p>
+                <h2>Projects</h2>
+            </div>
+
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <span class="project-number">01</span>
+
+                    <h3>Portfolio</h3>
+
+                    <p>
+                        Personal developer portfolio and digital identity
+                        built by stqrkvi.
+                    </p>
+
+                    <a href="#">View project →</a>
+                </div>
+
+
+                <div class="project-card">
+                    <span class="project-number">02</span>
+
+                    <h3>Discord Bots</h3>
+
+                    <p>
+                        Custom Discord bots with moderation, automation,
+                        utilities and community features.
+                    </p>
+
+                    <a href="#">View project →</a>
+                </div>
+
+
+                <div class="project-card">
+                    <span class="project-number">03</span>
+
+                    <h3>Web Projects</h3>
+
+                    <p>
+                        Experimental websites, tools and projects created
+                        while learning and building.
+                    </p>
+
+                    <a href="#">View project →</a>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Contact -->
+        <section id="contact" class="contact">
+
+            <p class="small-text">03 — CONTACT</p>
+
+            <h2>Let's build something.</h2>
+
+            <p>
+                Have an idea or want to work together?
+            </p>
+
+            <div class="buttons">
+                <a href="#" class="btn primary">GitHub</a>
+                <a href="#" class="btn">Discord</a>
+                <a href="#" class="btn">Instagram</a>
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <footer>
+        <p>© 2026 stqrkvi × zero</p>
+        <p>Built with code.</p>
+    </footer>
+
+</body>
+</html>
+```
