@@ -4,40 +4,673 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Abhinav Public School | Pitampura</title>
-
-    <meta name="description"
-          content="Abhinav Public School, CU Block Pitampura - Creating Leaders who are Ambitious, Proficient, and Smart.">
+    <title>APS — Coming Soon</title>
+    <meta name="description" content="Abhinav Public School — Official digital experience coming soon.">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@400;500;600;700;800&display=swap"
-          rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/responsive.css">
-    <link rel="stylesheet" href="css/profile.css">
+    <style>
+        :root {
+            --bg: #050505;
+            --card: rgba(15, 15, 15, .72);
+            --border: rgba(255, 255, 255, .10);
+            --text: #f5f5f5;
+            --muted: #969696;
+            --accent: #ff3030;
+            --accent-soft: rgba(255, 48, 48, .18);
+            --radius: 24px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            background: var(--bg);
+            color: var(--text);
+            font-family: "Inter", sans-serif;
+            overflow-x: hidden;
+        }
+
+        /* =========================
+           BACKGROUND
+        ========================= */
+
+        .background {
+            position: fixed;
+            inset: 0;
+            z-index: -10;
+            overflow: hidden;
+            background: #050505;
+        }
+
+        .background::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                linear-gradient(
+                    180deg,
+                    rgba(0,0,0,.45),
+                    rgba(0,0,0,.88)
+                ),
+                url("school-banner.jpg") center / cover no-repeat;
+
+            filter: blur(2px);
+            transform: scale(1.04);
+
+            opacity: .32;
+        }
+
+        .background::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+
+            background:
+                radial-gradient(
+                    circle at 50% 25%,
+                    rgba(255, 35, 35, .16),
+                    transparent 35%
+                ),
+                linear-gradient(
+                    90deg,
+                    rgba(0,0,0,.85),
+                    transparent 50%,
+                    rgba(0,0,0,.85)
+                );
+        }
+
+        .noise {
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 50;
+            opacity: .035;
+
+            background-image:
+                url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.6'/%3E%3C/svg%3E");
+        }
+
+        .orb {
+            position: fixed;
+            width: 420px;
+            height: 420px;
+            border-radius: 50%;
+            background: rgba(255, 35, 35, .07);
+            filter: blur(100px);
+            pointer-events: none;
+            z-index: -5;
+        }
+
+        .orb.one {
+            top: -180px;
+            left: -120px;
+        }
+
+        .orb.two {
+            right: -180px;
+            bottom: -180px;
+        }
+
+        /* =========================
+           NAV
+        ========================= */
+
+        nav {
+            width: 100%;
+            padding: 25px 6vw;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            position: relative;
+            z-index: 10;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+            letter-spacing: -.4px;
+        }
+
+        .brand img {
+            width: 38px;
+            height: 38px;
+            object-fit: cover;
+            border-radius: 11px;
+
+            border: 1px solid rgba(255,255,255,.15);
+
+            box-shadow:
+                0 0 25px rgba(255, 40, 40, .15);
+        }
+
+        .brand span {
+            font-size: 15px;
+        }
+
+        .nav-status {
+            display: flex;
+            align-items: center;
+            gap: 9px;
+
+            padding: 8px 13px;
+            border-radius: 999px;
+
+            font-size: 11px;
+            font-weight: 600;
+            color: #cfcfcf;
+
+            border: 1px solid var(--border);
+            background: rgba(255,255,255,.035);
+            backdrop-filter: blur(16px);
+        }
+
+        .status-dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: #ff3434;
+
+            box-shadow:
+                0 0 0 5px rgba(255, 52, 52, .08),
+                0 0 15px rgba(255, 52, 52, .6);
+
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: .5;
+                transform: scale(.75);
+            }
+        }
+
+        /* =========================
+           MAIN
+        ========================= */
+
+        main {
+            min-height: calc(100vh - 88px);
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            padding: 40px 20px 70px;
+        }
+
+        .profile {
+            width: min(780px, 100%);
+            text-align: center;
+
+            animation: appear .9s ease forwards;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(25px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* =========================
+           LOGO
+        ========================= */
+
+        .logo-wrap {
+            position: relative;
+            width: 118px;
+            height: 118px;
+            margin: 0 auto 25px;
+        }
+
+        .logo-wrap::before {
+            content: "";
+            position: absolute;
+            inset: -12px;
+
+            border-radius: 50%;
+            border: 1px solid rgba(255,255,255,.08);
+
+            animation: rotate 12s linear infinite;
+        }
+
+        .logo-wrap::after {
+            content: "";
+            position: absolute;
+            inset: -25px;
+
+            border-radius: 50%;
+            background: rgba(255, 35, 35, .10);
+
+            filter: blur(25px);
+            z-index: -1;
+        }
+
+        @keyframes rotate {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .logo {
+            width: 118px;
+            height: 118px;
+
+            object-fit: cover;
+            border-radius: 50%;
+
+            border: 4px solid rgba(255,255,255,.95);
+
+            box-shadow:
+                0 0 0 7px rgba(255,255,255,.04),
+                0 20px 70px rgba(0,0,0,.55);
+        }
+
+        /* =========================
+           CONTENT
+        ========================= */
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 7px 12px;
+            margin-bottom: 18px;
+
+            border-radius: 999px;
+            border: 1px solid rgba(255, 70, 70, .20);
+
+            background: rgba(255, 40, 40, .07);
+
+            color: #ff8a8a;
+
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font-family: "Space Grotesk", sans-serif;
+
+            font-size: clamp(42px, 7vw, 76px);
+            line-height: .95;
+            letter-spacing: -4px;
+
+            margin-bottom: 20px;
+        }
+
+        h1 span {
+            background: linear-gradient(
+                90deg,
+                #fff,
+                #ff6767,
+                #fff
+            );
+
+            background-size: 200% auto;
+
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+
+            animation: shine 5s linear infinite;
+        }
+
+        @keyframes shine {
+            to {
+                background-position: 200% center;
+            }
+        }
+
+        .description {
+            max-width: 560px;
+            margin: auto;
+
+            color: var(--muted);
+            font-size: 15px;
+            line-height: 1.8;
+        }
+
+        /* =========================
+           INFO CARDS
+        ========================= */
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 10px;
+
+            margin: 35px auto 22px;
+            max-width: 650px;
+        }
+
+        .info {
+            padding: 17px 13px;
+
+            border-radius: 17px;
+            border: 1px solid var(--border);
+
+            background: rgba(255,255,255,.035);
+            backdrop-filter: blur(20px);
+
+            transition:
+                transform .3s ease,
+                border-color .3s ease,
+                background .3s ease;
+        }
+
+        .info:hover {
+            transform: translateY(-4px);
+
+            border-color: rgba(255,255,255,.18);
+            background: rgba(255,255,255,.06);
+        }
+
+        .info strong {
+            display: block;
+
+            font-family: "Space Grotesk", sans-serif;
+            font-size: 17px;
+
+            margin-bottom: 5px;
+        }
+
+        .info small {
+            color: #777;
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* =========================
+           PROGRESS
+        ========================= */
+
+        .progress-box {
+            max-width: 650px;
+            margin: 25px auto 0;
+
+            padding: 20px;
+
+            border-radius: 20px;
+
+            border: 1px solid var(--border);
+            background: rgba(0,0,0,.25);
+            backdrop-filter: blur(18px);
+
+            text-align: left;
+        }
+
+        .progress-head {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            margin-bottom: 12px;
+        }
+
+        .progress-head span:first-child {
+            color: #aaa;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .progress-head span:last-child {
+            color: #fff;
+            font-size: 11px;
+            font-weight: 700;
+        }
+
+        .bar {
+            height: 5px;
+            width: 100%;
+
+            border-radius: 999px;
+            overflow: hidden;
+
+            background: rgba(255,255,255,.08);
+        }
+
+        .bar span {
+            display: block;
+            width: 72%;
+            height: 100%;
+
+            border-radius: inherit;
+
+            background: linear-gradient(
+                90deg,
+                #8b0000,
+                #ff3030,
+                #ff7474
+            );
+
+            box-shadow:
+                0 0 18px rgba(255, 40, 40, .45);
+        }
+
+        /* =========================
+           FOOTER
+        ========================= */
+
+        footer {
+            margin-top: 28px;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 7px;
+
+            color: #555;
+            font-size: 11px;
+        }
+
+        footer b {
+            color: #888;
+            font-weight: 600;
+        }
+
+        /* =========================
+           MOBILE
+        ========================= */
+
+        @media (max-width: 600px) {
+
+            nav {
+                padding: 20px;
+            }
+
+            .nav-status {
+                font-size: 9px;
+            }
+
+            main {
+                padding: 30px 18px 50px;
+            }
+
+            .logo-wrap,
+            .logo {
+                width: 100px;
+                height: 100px;
+            }
+
+            h1 {
+                font-size: 48px;
+                letter-spacing: -3px;
+            }
+
+            .description {
+                font-size: 13px;
+                line-height: 1.7;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+                gap: 8px;
+            }
+
+            .info {
+                padding: 15px;
+            }
+
+            .info strong {
+                font-size: 15px;
+            }
+
+            footer {
+                flex-direction: column;
+            }
+        }
+
+        @media (max-width: 380px) {
+
+            h1 {
+                font-size: 42px;
+            }
+
+            .brand span {
+                display: none;
+            }
+        }
+    </style>
 </head>
 
 <body>
 
-    <!-- YOUR COMPLETE HTML CONTENT HERE -->
-    <!-- TOP BAR -->
-    <!-- NAVBAR -->
-    <!-- HERO -->
-    <!-- ABOUT -->
-    <!-- WHY CHOOSE US -->
-    <!-- FEATURES -->
-    <!-- ACHIEVEMENTS -->
-    <!-- NOTICES -->
-    <!-- CONTACT -->
-    <!-- FOOTER -->
-    <!-- STUDENT PORTAL -->
-    <!-- LOGIN -->
-    <!-- DASHBOARD -->
+    <div class="background"></div>
+    <div class="noise"></div>
 
-    <script src="js/script.js"></script>
+    <div class="orb one"></div>
+    <div class="orb two"></div>
+
+    <!-- NAVBAR -->
+    <nav>
+
+        <div class="brand">
+            <img src="school-logo.jpg" alt="APS Logo">
+            <span>ABHINAV PUBLIC SCHOOL</span>
+        </div>
+
+        <div class="nav-status">
+            <span class="status-dot"></span>
+            DIGITAL PROJECT
+        </div>
+
+    </nav>
+
+
+    <!-- MAIN -->
+    <main>
+
+        <section class="profile">
+
+            <!-- LOGO -->
+            <div class="logo-wrap">
+                <img
+                    class="logo"
+                    src="school-logo.jpg"
+                    alt="Abhinav Public School Logo"
+                >
+            </div>
+
+
+            <!-- LABEL -->
+            <div class="eyebrow">
+                ● Website Development
+            </div>
+
+
+            <!-- TITLE -->
+            <h1>
+                <span>Coming Soon.</span>
+            </h1>
+
+
+            <!-- DESCRIPTION -->
+            <p class="description">
+                A new digital experience for Abhinav Public School is
+                currently being built. A cleaner, faster and more modern
+                platform for students, parents and the school community.
+            </p>
+
+
+            <!-- INFO -->
+            <div class="info-grid">
+
+                <div class="info">
+                    <strong>APS</strong>
+                    <small>School</small>
+                </div>
+
+                <div class="info">
+                    <strong>2026</strong>
+                    <small>Project</small>
+                </div>
+
+                <div class="info">
+                    <strong>Online</strong>
+                    <small>Status</small>
+                </div>
+
+            </div>
+
+
+            <!-- PROGRESS -->
+            <div class="progress-box">
+
+                <div class="progress-head">
+                    <span>Development Progress</span>
+                    <span>72%</span>
+                </div>
+
+                <div class="bar">
+                    <span></span>
+                </div>
+
+            </div>
+
+
+            <!-- FOOTER -->
+            <footer>
+                <span>Designed & developed for</span>
+                <b>Abhinav Public School</b>
+            </footer>
+
+        </section>
+
+    </main>
 
 </body>
 </html>
