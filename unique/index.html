@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#100612">
+  <meta name="description" content="A little universe made of love.">
+  <title>A Little Piece of Love ❤️</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <div class="stars" aria-hidden="true"></div>
+  <div class="glow glow-one"></div>
+  <div class="glow glow-two"></div>
+
+  <main class="page">
+    <header class="top">
+      <span class="brand"><span>♥</span> a little universe</span>
+      <span class="live"><i></i> made with love</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">SOME FEELINGS NEED NO TRANSLATION</p>
+      <h1>A thousand ways to say <span>it.</span></h1>
+      <p class="subtitle">
+        Different languages, different words — but somehow,
+        the feeling always finds its way to the heart.
+      </p>
+
+      <div class="heart-stage">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <div class="heart-halo"></div>
+
+        <div class="heart" aria-label="Animated glowing heart">
+          <svg viewBox="0 0 200 185" role="img" aria-hidden="true">
+            <defs>
+              <linearGradient id="heartGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffb5d6"/>
+                <stop offset="48%" stop-color="#ff467e"/>
+                <stop offset="100%" stop-color="#bd164e"/>
+              </linearGradient>
+              <filter id="heartShadow" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="5"/>
+              </filter>
+            </defs>
+            <path d="M100 169 C85 153 13 103 13 54 C13 3 76 -8 100 34 C124 -8 187 3 187 54 C187 103 115 153 100 169Z"
+              fill="#ff246b" opacity=".55" filter="url(#heartShadow)"/>
+            <path d="M100 169 C85 153 13 103 13 54 C13 3 76 -8 100 34 C124 -8 187 3 187 54 C187 103 115 153 100 169Z"
+              fill="url(#heartGradient)" stroke="#ffc0da" stroke-width="1.5"/>
+            <path d="M39 43 C43 22 64 18 76 29" fill="none"
+              stroke="#fff0f7" stroke-width="4" stroke-linecap="round" opacity=".65"/>
+          </svg>
+        </div>
+
+        <div id="heartParticles" class="heart-particles" aria-hidden="true"></div>
+        <div class="orbit-label label-one">♡ infinite feelings</div>
+        <div class="orbit-label label-two">♡ just for you</div>
+      </div>
+
+      <div class="phrase-card">
+        <span class="phrase-label">RIGHT NOW, IN ANOTHER LANGUAGE</span>
+        <p id="phrase" class="phrase">I love you</p>
+        <p id="translation" class="translation">English · 🇬🇧</p>
+        <div class="progress-track"><div id="progress"></div></div>
+      </div>
+
+      <div class="actions">
+        <button id="nextBtn" class="primary-btn" type="button">
+          Discover another <span>↗</span>
+        </button>
+        <button id="pauseBtn" class="secondary-btn" type="button">
+          Pause animation
+        </button>
+      </div>
+
+      <p class="footnote">A little reminder that love speaks every language. ✦</p>
+    </section>
+
+    <footer>
+      <span>CRAFTED WITH <span class="footer-heart">♥</span> AND A LITTLE MAGIC</span>
+      <span>STQRKVI <span class="footer-dot">·</span> UNIQUE</span>
+    </footer>
+  </main>
+</body>
+</html>
