@@ -1,1 +1,228 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080609">
+  <meta name="description" content="A little universe made of feelings.">
+  <title>UNIQUE — A Little World of Our Own</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <canvas id="particleCanvas" aria-hidden="true"></canvas>
+  <div class="ambient ambient--one" aria-hidden="true"></div>
+  <div class="ambient ambient--two" aria-hidden="true"></div>
+  <div class="ambient ambient--three" aria-hidden="true"></div>
 
+  <header class="site-header" id="top">
+    <a class="brand" href="#top" aria-label="Unique home">
+      <span class="brand__symbol" aria-hidden="true">♥</span>
+      <span class="brand__name">UNIQUE<span>.</span></span>
+    </a>
+    <nav class="header-nav" aria-label="Main navigation">
+      <a href="#story">The feeling</a>
+      <a href="#languages">Every language</a>
+      <a href="#letter">A little note</a>
+    </nav>
+    <div class="header-actions">
+      <span class="live-status"><span></span> MADE WITH FEELING</span>
+      <button class="icon-button" id="soundToggle" type="button" aria-label="Turn gentle chimes on" title="Optional gentle chimes">
+        <span id="soundGlyph" aria-hidden="true">♫</span>
+      </button>
+      <button class="menu-toggle icon-button" id="menuToggle" type="button" aria-expanded="false" aria-label="Open navigation">
+        <span class="menu-lines" aria-hidden="true"><i></i><i></i></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero section-shell" id="story">
+      <div class="hero__copy reveal">
+        <p class="eyebrow"><span></span> A LITTLE WORLD OF OUR OWN <span></span></p>
+        <h1>Out of everyone,<br><em>there's something about you.</em></h1>
+        <p class="hero__description">
+          Some feelings are hard to explain. So here's a little corner of the internet
+          for the words, the moments, and the small things that make someone feel special.
+        </p>
+        <div class="hero__actions">
+          <a class="button button--primary" href="#letter">Explore this little world <span>↘</span></a>
+          <button class="button button--quiet" id="pauseMotion" type="button">Pause motion</button>
+        </div>
+        <div class="hero__microcopy">
+          <span class="micro-heart">♥</span>
+          <span>Made for one very unique person.</span>
+        </div>
+      </div>
+
+      <div class="heart-scene reveal" id="heartScene">
+        <div class="scene-grid" aria-hidden="true"></div>
+        <div class="orbit orbit--wide" aria-hidden="true"></div>
+        <div class="orbit orbit--tall" aria-hidden="true"></div>
+        <div class="orbit orbit--inner" aria-hidden="true"></div>
+        <span class="scene-spark scene-spark--one" aria-hidden="true">✦</span>
+        <span class="scene-spark scene-spark--two" aria-hidden="true">✧</span>
+        <span class="scene-spark scene-spark--three" aria-hidden="true">✦</span>
+        <span class="scene-spark scene-spark--four" aria-hidden="true">✧</span>
+        <span class="scene-spark scene-spark--five" aria-hidden="true">·</span>
+        <div class="heart-aura" aria-hidden="true"></div>
+        <button class="heart-button" id="heartButton" type="button" aria-label="Make the heart sparkle">
+          <svg class="heart-svg" viewBox="0 0 220 204" role="img" aria-label="A glowing pink heart">
+            <defs>
+              <linearGradient id="heartGradient" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffe1ee"/>
+                <stop offset="28%" stop-color="#ff9fc6"/>
+                <stop offset="60%" stop-color="#ff4e96"/>
+                <stop offset="100%" stop-color="#ad124e"/>
+              </linearGradient>
+              <linearGradient id="heartHighlight" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#fff" stop-opacity=".8"/>
+                <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+              </linearGradient>
+              <filter id="heartBlur" x="-70%" y="-70%" width="240%" height="240%">
+                <feGaussianBlur stdDeviation="8"/>
+              </filter>
+            </defs>
+            <path class="heart-svg__glow" d="M110 187C91 169 14 117 14 60 14 4 80-8 110 38 140-8 206 4 206 60c0 57-77 109-96 127Z" fill="#ff287c" filter="url(#heartBlur)"/>
+            <path class="heart-svg__shape" d="M110 187C91 169 14 117 14 60 14 4 80-8 110 38 140-8 206 4 206 60c0 57-77 109-96 127Z" fill="url(#heartGradient)" stroke="#ffd0e3" stroke-width="1.4"/>
+            <path d="M42 49C47 25 69 20 84 32" fill="none" stroke="url(#heartHighlight)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M30 68C29 90 40 107 56 120" fill="none" stroke="#fff" stroke-opacity=".15" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </button>
+        <span class="float-tag float-tag--top">made of feelings</span>
+        <span class="float-tag float-tag--bottom">♡ just because</span>
+        <span class="scene-caption">A small thing, with a big feeling.</span>
+      </div>
+    </section>
+
+    <section class="language-section section-shell" id="languages">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><span></span> THE SAME FEELING, DIFFERENT WORDS <span></span></p>
+        <h2>Love has <em>many languages.</em></h2>
+        <p>Twenty little ways to say something the heart already understands.</p>
+      </div>
+
+      <div class="language-card reveal">
+        <div class="language-card__top">
+          <span class="card-kicker"><span class="pink-dot">♥</span> A LITTLE TRANSLATION</span>
+          <span class="counter" id="languageCounter">01 <i>/</i> 20</span>
+        </div>
+        <div class="language-display" aria-live="polite" aria-atomic="true">
+          <span class="language-display__ornament" aria-hidden="true">✧</span>
+          <p class="language-phrase" id="languagePhrase">I love you.</p>
+          <p class="language-name" id="languageName">English · 🇬🇧</p>
+        </div>
+        <div class="progress-track" aria-hidden="true"><div class="progress-bar" id="languageProgress"></div></div>
+        <div class="language-card__bottom">
+          <span class="muted-note">Different words. Same feeling.</span>
+          <div class="language-controls">
+            <button class="round-control" id="previousLanguage" type="button" aria-label="Previous language">←</button>
+            <button class="button button--small" id="nextLanguage" type="button">Next feeling <span>↗</span></button>
+            <button class="round-control" id="pauseLanguages" type="button" aria-label="Pause language rotation" title="Pause rotation">Ⅱ</button>
+          </div>
+        </div>
+      </div>
+      <p class="section-footnote reveal"><span>✦</span> Let the words change. Let the feeling stay.</p>
+    </section>
+
+    <section class="quote-section section-shell reveal" aria-label="A thought about feelings">
+      <div class="quote-mark" aria-hidden="true">“</div>
+      <p class="quote-text">Sometimes, a person becomes your favourite part of an otherwise ordinary day.</p>
+      <span class="quote-line"></span>
+      <p class="quote-caption">A thought worth keeping.</p>
+    </section>
+
+    <section class="letter-section section-shell" id="letter">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><span></span> A NOTE FROM THE HEART <span></span></p>
+        <h2>Not every beautiful thing<br>needs <em>a name.</em></h2>
+        <p>Some things are better said softly.</p>
+      </div>
+
+      <article class="letter-card reveal">
+        <div class="letter-card__glow" aria-hidden="true"></div>
+        <span class="letter-card__icon" aria-hidden="true">♡</span>
+        <p class="letter-card__eyebrow">A LITTLE SOMETHING FOR UNIQUE</p>
+        <h3>For the person who makes<br><em>ordinary feel different.</em></h3>
+        <p class="letter-card__copy">
+          Maybe it's a smile you remember later, a conversation that stays with you,
+          or a small moment that somehow feels bigger than it should. Sometimes people
+          become special without even trying. This little page is a reminder that
+          those feelings can be worth celebrating.
+        </p>
+        <button class="button button--primary letter-open" id="openLetter" type="button">
+          Open a little secret <span>♡</span>
+        </button>
+        <div class="letter-card__signature">with a little warmth, always</div>
+      </article>
+    </section>
+
+    <section class="memory-section section-shell" id="little-things">
+      <div class="section-heading reveal">
+        <p class="eyebrow"><span></span> THE LITTLE THINGS <span></span></p>
+        <h2>Small details. <em>Big feelings.</em></h2>
+        <p>Because not everything meaningful has to be loud.</p>
+      </div>
+      <div class="memory-grid">
+        <article class="memory-card reveal">
+          <span class="memory-card__number">01</span>
+          <span class="memory-card__icon" aria-hidden="true">✧</span>
+          <h3>The unexpected smile</h3>
+          <p>When one small moment changes the mood of an entire day.</p>
+        </article>
+        <article class="memory-card reveal">
+          <span class="memory-card__number">02</span>
+          <span class="memory-card__icon" aria-hidden="true">♡</span>
+          <h3>The little details</h3>
+          <p>Sometimes it's the smallest things that stay in your mind the longest.</p>
+        </article>
+        <article class="memory-card reveal">
+          <span class="memory-card__number">03</span>
+          <span class="memory-card__icon" aria-hidden="true">✦</span>
+          <h3>The feeling itself</h3>
+          <p>No grand explanation. Just a feeling that makes a person matter.</p>
+        </article>
+      </div>
+      <p class="memory-note reveal">These are placeholders for your real memories. Make them yours when you're ready.</p>
+    </section>
+
+    <section class="ending-section section-shell reveal">
+      <div class="ending-heart" aria-hidden="true">♥</div>
+      <p class="eyebrow"><span></span> AND IF WORDS AREN'T ENOUGH <span></span></p>
+      <h2>Some feelings are<br><em>simply felt.</em></h2>
+      <p class="ending-copy">No perfect words. No grand promises. Just a feeling, in its own little world.</p>
+      <button class="button button--outline" id="replayExperience" type="button"><span>↻</span> Feel it all over again</button>
+      <button class="text-link" id="sharePage" type="button">Share this little world <span>↗</span></button>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand brand--footer" href="#top"><span class="brand__symbol">♥</span><span class="brand__name">UNIQUE<span>.</span></span></a>
+    <span class="footer-center">DESIGNED WITH <span>♥</span> & A LITTLE MAGIC</span>
+    <a class="footer-top" href="#top">BACK TO TOP ↑</a>
+  </footer>
+
+  <div class="modal" id="letterModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <section class="modal-panel" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-describedby="modalText">
+      <button class="modal-close" id="closeLetter" type="button" aria-label="Close letter">×</button>
+      <span class="modal-heart" aria-hidden="true">♥</span>
+      <p class="modal-kicker">A LITTLE SECRET</p>
+      <h2 id="modalTitle">You make ordinary<br><em>feel extraordinary.</em></h2>
+      <p id="modalText" class="modal-copy">
+        Unique, this little corner is for the feelings that are not always easy to explain.
+        Some people leave a little light in ordinary moments, and sometimes that is
+        already something special. This page is a small reminder of that feeling. ♡
+      </p>
+      <p class="modal-signature">with love, always ♡</p>
+    </section>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><p class="noscript-message">This little world needs JavaScript enabled for its animations.</p></noscript>
+</body>
+</html>
