@@ -4,85 +4,170 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#100612">
-  <meta name="description" content="A little universe made of love.">
-  <title>A Little Piece of Love ❤️</title>
+  <meta name="theme-color" content="#080609">
+  <meta name="description" content="Some feelings are too beautiful for words.">
+  <title>UNIQUE — A Little Love Story</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <div class="stars" aria-hidden="true"></div>
-  <div class="glow glow-one"></div>
-  <div class="glow glow-two"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+  <div class="ambient ambient-a"></div>
+  <div class="ambient ambient-b"></div>
 
-  <main class="page">
-    <header class="top">
-      <span class="brand"><span>♥</span> a little universe</span>
-      <span class="live"><i></i> made with love</span>
-    </header>
+  <header class="navbar">
+    <a class="logo" href="#home" aria-label="Unique home">
+      <span class="logo-icon">♥</span>
+      <span>UNIQUE<span class="logo-dot">.</span></span>
+    </a>
+    <div class="nav-right">
+      <span class="status"><i></i> A LITTLE LOVE STORY</span>
+      <button class="sound-btn" id="soundBtn" type="button" aria-label="Toggle sound">
+        <span id="soundIcon">♫</span>
+      </button>
+    </div>
+  </header>
 
+  <main id="home">
     <section class="hero">
-      <p class="eyebrow">SOME FEELINGS NEED NO TRANSLATION</p>
-      <h1>A thousand ways to say <span>it.</span></h1>
-      <p class="subtitle">
-        Different languages, different words — but somehow,
-        the feeling always finds its way to the heart.
+      <div class="eyebrow"><span></span> SOMETHING A LITTLE DIFFERENT <span></span></div>
+
+      <h1>In a world full of people,<br>
+        <span class="headline-accent">somehow, it's you.</span>
+      </h1>
+
+      <p class="intro">
+        Some feelings don't need a reason. Some people just become
+        your favourite part of every ordinary day.
       </p>
 
-      <div class="heart-stage">
-        <div class="orbit orbit-one"></div>
-        <div class="orbit orbit-two"></div>
-        <div class="heart-halo"></div>
+      <div class="heart-universe" id="heartUniverse">
+        <div class="orbit orbit-1"></div>
+        <div class="orbit orbit-2"></div>
+        <div class="orbit orbit-3"></div>
 
-        <div class="heart" aria-label="Animated glowing heart">
-          <svg viewBox="0 0 200 185" role="img" aria-hidden="true">
+        <span class="orbit-star star-1">✦</span>
+        <span class="orbit-star star-2">✧</span>
+        <span class="orbit-star star-3">✦</span>
+        <span class="orbit-star star-4">✧</span>
+
+        <div class="heart-aura"></div>
+        <button class="main-heart" id="heartBtn" type="button"
+          aria-label="Make the heart sparkle">
+          <svg viewBox="0 0 200 185" role="img" aria-label="Pink glowing heart">
             <defs>
-              <linearGradient id="heartGradient" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0%" stop-color="#ffb5d6"/>
-                <stop offset="48%" stop-color="#ff467e"/>
-                <stop offset="100%" stop-color="#bd164e"/>
+              <linearGradient id="heartFill" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#ffd0e3"/>
+                <stop offset="35%" stop-color="#ff78ad"/>
+                <stop offset="72%" stop-color="#ff2f83"/>
+                <stop offset="100%" stop-color="#b80c54"/>
               </linearGradient>
-              <filter id="heartShadow" x="-60%" y="-60%" width="220%" height="220%">
-                <feGaussianBlur stdDeviation="5"/>
+              <linearGradient id="heartShine" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#fff" stop-opacity=".8"/>
+                <stop offset="100%" stop-color="#fff" stop-opacity="0"/>
+              </linearGradient>
+              <filter id="softGlow" x="-60%" y="-60%" width="220%" height="220%">
+                <feGaussianBlur stdDeviation="7"/>
               </filter>
             </defs>
-            <path d="M100 169 C85 153 13 103 13 54 C13 3 76 -8 100 34 C124 -8 187 3 187 54 C187 103 115 153 100 169Z"
-              fill="#ff246b" opacity=".55" filter="url(#heartShadow)"/>
-            <path d="M100 169 C85 153 13 103 13 54 C13 3 76 -8 100 34 C124 -8 187 3 187 54 C187 103 115 153 100 169Z"
-              fill="url(#heartGradient)" stroke="#ffc0da" stroke-width="1.5"/>
-            <path d="M39 43 C43 22 64 18 76 29" fill="none"
-              stroke="#fff0f7" stroke-width="4" stroke-linecap="round" opacity=".65"/>
+            <path class="heart-shadow"
+              d="M100 171 C82 153 12 106 12 55 C12 3 74 -10 100 34 C126 -10 188 3 188 55 C188 106 118 153 100 171Z"
+              fill="#ff2f83" filter="url(#softGlow)"/>
+            <path
+              d="M100 171 C82 153 12 106 12 55 C12 3 74 -10 100 34 C126 -10 188 3 188 55 C188 106 118 153 100 171Z"
+              fill="url(#heartFill)" stroke="#ffc3dc" stroke-width="1.2"/>
+            <path d="M39 44 C42 24 60 17 75 28" fill="none"
+              stroke="url(#heartShine)" stroke-width="5" stroke-linecap="round"/>
+            <path d="M26 60 Q24 87 46 107" fill="none"
+              stroke="#fff" stroke-opacity=".18" stroke-width="2" stroke-linecap="round"/>
           </svg>
+        </button>
+
+        <span class="float-label label-top">made of feelings</span>
+        <span class="float-label label-bottom">♡ just because</span>
+      </div>
+
+      <div class="love-card">
+        <div class="card-top">
+          <span class="card-label"><span class="tiny-heart">♥</span> LOVE, IN EVERY LANGUAGE</span>
+          <span class="language-count" id="languageCount">01 / 20</span>
         </div>
 
-        <div id="heartParticles" class="heart-particles" aria-hidden="true"></div>
-        <div class="orbit-label label-one">♡ infinite feelings</div>
-        <div class="orbit-label label-two">♡ just for you</div>
+        <div class="phrase-window" aria-live="polite" aria-atomic="true">
+          <p class="phrase" id="phrase">I love you.</p>
+          <p class="translation" id="translation">English · 🇬🇧</p>
+        </div>
+
+        <div class="progress-track">
+          <div id="progress"></div>
+        </div>
+
+        <div class="card-bottom">
+          <span class="tiny-note">Different words. Same feeling.</span>
+          <button id="nextBtn" class="next-btn" type="button">
+            Next feeling <span>↗</span>
+          </button>
+        </div>
       </div>
 
-      <div class="phrase-card">
-        <span class="phrase-label">RIGHT NOW, IN ANOTHER LANGUAGE</span>
-        <p id="phrase" class="phrase">I love you</p>
-        <p id="translation" class="translation">English · 🇬🇧</p>
-        <div class="progress-track"><div id="progress"></div></div>
+      <div class="hero-footer">
+        <span class="scroll-mark"><span></span> KEEP SCROLLING</span>
+        <span class="footer-note">A tiny corner of the universe, made with love.</span>
       </div>
-
-      <div class="actions">
-        <button id="nextBtn" class="primary-btn" type="button">
-          Discover another <span>↗</span>
-        </button>
-        <button id="pauseBtn" class="secondary-btn" type="button">
-          Pause animation
-        </button>
-      </div>
-
-      <p class="footnote">A little reminder that love speaks every language. ✦</p>
     </section>
 
-    <footer>
-      <span>CRAFTED WITH <span class="footer-heart">♥</span> AND A LITTLE MAGIC</span>
-      <span>STQRKVI <span class="footer-dot">·</span> UNIQUE</span>
-    </footer>
+    <section class="message-section" id="letter">
+      <div class="section-kicker">A NOTE FROM THE HEART</div>
+      <div class="letter-card">
+        <span class="letter-decoration">“</span>
+        <h2>Not every beautiful thing<br>needs <em>a name.</em></h2>
+        <p>
+          Sometimes it's just a smile you remember, a conversation you
+          replay, or a person who makes an ordinary moment feel special.
+          And somehow, without even trying, they become a little part of
+          everything.
+        </p>
+        <button class="letter-btn" id="letterBtn" type="button">
+          Open a little secret <span>♡</span>
+        </button>
+      </div>
+    </section>
+
+    <section class="ending-section">
+      <div class="ending-heart">♥</div>
+      <p class="ending-kicker">AND IF WORDS AREN'T ENOUGH...</p>
+      <h2>Some feelings are<br><em>simply felt.</em></h2>
+      <p class="ending-copy">No perfect words. No grand promises. Just a feeling.</p>
+      <button class="replay-btn" id="replayBtn" type="button">
+        <span>↻</span> Feel it all over again
+      </button>
+    </section>
   </main>
+
+  <footer class="site-footer">
+    <a class="footer-brand" href="#home">UNIQUE<span>.</span></a>
+    <span>DESIGNED WITH <span class="pink">♥</span> & A LITTLE MAGIC</span>
+    <a class="back-top" href="#home">BACK TO TOP ↑</a>
+  </footer>
+
+  <div class="modal" id="letterModal" aria-hidden="true">
+    <div class="modal-backdrop" id="modalBackdrop"></div>
+    <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button class="modal-close" id="modalClose" type="button" aria-label="Close">×</button>
+      <span class="modal-heart">♥</span>
+      <p class="modal-kicker">A LITTLE SECRET</p>
+      <h2 id="modalTitle">You make ordinary<br><em>feel extraordinary.</em></h2>
+      <p class="modal-message" id="modalMessage">
+        Out of all the little things life could bring, some people end up
+        meaning more than they will ever know.
+      </p>
+      <p class="modal-signature">with love, always ♡</p>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
 </body>
 </html>
